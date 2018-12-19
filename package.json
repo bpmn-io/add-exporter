@@ -1,6 +1,6 @@
 {
   "name": "@bpmn-io/add-exporter",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Add exporter meta-data to BPMN, CMMN and DMN diagrams",
   "main": "index.js",
   "scripts": {
