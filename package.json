@@ -8,6 +8,9 @@
     "lint": "eslint .",
     "test": "karma start"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/bpmn-io/add-exporter.git"
