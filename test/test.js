@@ -4,28 +4,32 @@ import {
 } from 'bpmn-js/test/helper';
 
 import BpmnJS from 'bpmn-js';
+import DmnJS from 'dmn-js';
+
+import AddExporter from '../add-exporter';
 
 import AddExporterModule from '..';
 
-var diagramXML = require('./diagram.bpmn');
+var bpmnXML = require('./process.bpmn');
+var dmnXML = require('./decision.dmn');
 
 
 describe('add-exporter', function() {
 
-  describe('should serialize exporter values', function() {
+  describe('should extend BpmnJS instance', function() {
 
-    beforeEach(bootstrapViewer(diagramXML, {
+    beforeEach(bootstrapViewer(bpmnXML, {
       additionalModules: [
         AddExporterModule
       ],
       exporter: {
         name: 'foo',
-        version: '100.1-bar'
+        version: 'bar'
       }
     }));
 
 
-    it('works', function(done) {
+    it('serializing exporter value', function(done) {
 
       // given
       var bpmnJS = getBpmnJS();
@@ -34,7 +38,30 @@ describe('add-exporter', function() {
       bpmnJS.saveXML(function(err, xml) {
 
         expect(xml).to.contain('exporter="foo"');
-        expect(xml).to.contain('exporterVersion="100.1-bar"');
+        expect(xml).to.contain('exporterVersion="bar"');
+
+        done(err);
+      });
+    });
+
+  });
+
+
+  it('should extend existing instance via helper', function(done) {
+
+    // given
+    var dmnJS = new DmnJS();
+
+    // when
+    AddExporter({ name: 'foo', version: 'bar' }, dmnJS);
+
+    // then
+    dmnJS.importXML(dmnXML, function() {
+
+      dmnJS.saveXML(function(err, xml) {
+
+        expect(xml).to.contain('exporter="foo"');
+        expect(xml).to.contain('exporterVersion="bar"');
 
         done(err);
       });
