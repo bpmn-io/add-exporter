@@ -1,0 +1,45 @@
+{
+  "name": "@bpmn-io/add-exporter",
+  "version": "0.0.0",
+  "description": "Add exporter meta-data to BPMN, CMMN and DMN diagrams",
+  "main": "index.js",
+  "scripts": {
+    "all": "run-s lint test",
+    "lint": "eslint .",
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bpmn-io/add-exporter.git"
+  },
+  "keywords": [
+    "BPMN",
+    "CMMN",
+    "DMN",
+    "exporter"
+  ],
+  "author": {
+    "name": "Nico Rehwaldt",
+    "url": "https://github.com/nikku"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "bpmn-js": "^3.0.4",
+    "chai": "^4.2.0",
+    "eslint": "^5.10.0",
+    "eslint-plugin-bpmn-io": "^0.6.0",
+    "karma": "^3.1.4",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-firefox-launcher": "^1.1.0",
+    "karma-mocha": "^1.3.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-webpack": "^3.0.5",
+    "mocha": "^5.2.0",
+    "mocha-test-container-support": "^0.2.0",
+    "npm-run-all": "^4.1.5",
+    "puppeteer": "^1.11.0",
+    "raw-loader": "^1.0.0",
+    "webpack": "^4.28.0"
+  }
+}
