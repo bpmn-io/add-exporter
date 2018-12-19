@@ -1,5 +1,7 @@
 # @bpmn-io/add-exporter
 
+[![Build Status](https://travis-ci.com/bpmn-io/add-exporter.svg?branch=master)](https://travis-ci.com/bpmn-io/add-exporter)
+
 Plugs into your favorite [BPMN](https://github.com/bpmn-io/bpmn-js), [DMN](https://github.com/bpmn-io/dmn-js) and [CMMN](https://github.com/bpmn-io/cmmn-js) editor and adds the `exporter` and `exporterVersion` meta-data to saved diagrams.
 
 
