@@ -45,5 +45,9 @@
     "puppeteer": "^1.11.0",
     "raw-loader": "^1.0.0",
     "webpack": "^4.28.0"
-  }
+  },
+  "files": [
+    "add-exporter.js",
+    "index.js"
+  ]
 }
